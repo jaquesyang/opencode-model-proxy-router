@@ -1,13 +1,32 @@
 {
-  "name": "a",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "node --test test.mjs"
+  "name": "@jaquesyang/opencode-model-proxy-router",
+  "version": "0.1.0",
+  "description": "Opencode plugin that routes model API requests to different HTTP proxies by wrapping fetch, with hot-reload.",
+  "type": "module",
+  "main": "./model-proxy-router.ts",
+  "exports": {
+    ".": "./model-proxy-router.ts",
+    "./server": "./model-proxy-router.ts"
   },
-  "keywords": [],
+  "files": [
+    "model-proxy-router.ts",
+    "router.ts"
+  ],
+  "scripts": {
+    "test": "node --test test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "proxy",
+    "http-proxy"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.0.0",
+    "@types/node": "^26.2.0",
+    "typescript": "^5.0.0"
+  }
 }

@@ -12,10 +12,34 @@ An [Opencode](https://opencode.ai) plugin that routes model API requests to diff
 
 ## Install
 
-Copy `model-proxy-router.ts` into your plugins directory:
+### Local plugin
 
-- Project-level: `.opencode/plugins/model-proxy-router.ts`
-- Global: `~/.config/opencode/plugins/model-proxy-router.ts`
+Copy `model-proxy-router.ts` and `router.ts` into your plugins directory:
+
+- Project-level: `.opencode/plugins/`
+- Global: `~/.config/opencode/plugins/`
+
+### From npm
+
+Add the package to your `opencode.json`:
+
+```json
+{
+  "plugin": ["@jaquesyang/opencode-model-proxy-router"]
+}
+```
+
+### Options
+
+Override the config path via the tuple form:
+
+```json
+{
+  "plugin": [
+    ["@jaquesyang/opencode-model-proxy-router", { "configPath": "/absolute/path.json" }]
+  ]
+}
+```
 
 ## Config
 
