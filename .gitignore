@@ -1,0 +1,5 @@
+node_modules/
+*.log
+.DS_Store
+# real proxy credentials - keep local only
+model-proxy-router.json

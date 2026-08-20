@@ -1,0 +1,12 @@
+{
+  "proxies": {
+    "socks": "socks5://user:pass@host:port",
+    "http": "http://user:pass@host:port"
+  },
+  "default": "direct",
+  "routes": {
+    "opencode-go/muse-spark-1.2-contributor": "socks",
+    "opencode/muse-spark-1.2-contributor-free": "http",
+    "opencode-go/*": "socks"
+  }
+}
