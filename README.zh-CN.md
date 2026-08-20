@@ -14,16 +14,17 @@
 
 ## 安装
 
-### 本地插件
+### 通过 npm 安装（推荐）
 
-将 `model-proxy-router.ts` 和 `router.ts` 复制到插件目录：
+```bash
+npm install @jaquesyang/opencode-model-proxy-router
+# 或
+bun add @jaquesyang/opencode-model-proxy-router
+pnpm add @jaquesyang/opencode-model-proxy-router
+yarn add @jaquesyang/opencode-model-proxy-router
+```
 
-- 项目级：`.opencode/plugins/`
-- 全局：`~/.config/opencode/plugins/`
-
-### 通过 npm 安装
-
-在 `opencode.json` 中添加该包：
+然后在 `opencode.json`（项目根目录或 `~/.config/opencode/opencode.json`）中添加插件：
 
 ```json
 {
@@ -31,9 +32,20 @@
 }
 ```
 
+无需构建步骤 —— Opencode（Bun）可直接加载 `.ts` 文件。
+
+### 本地插件（单文件）
+
+将单个文件 `model-proxy-router.ts` 复制到插件目录即可：
+
+- 项目级：`.opencode/plugins/`
+- 全局：`~/.config/opencode/plugins/`
+
+无需其他文件。
+
 ### 选项
 
-通过元组形式覆盖配置文件路径：
+通过元组形式覆盖配置文件路径（npm 与本地安装均适用）：
 
 ```json
 {

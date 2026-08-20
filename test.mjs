@@ -3,7 +3,8 @@ import assert from "node:assert/strict"
 import { writeFileSync, mkdtempSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { createRouter } from "./router.ts"
+import ModelProxyRouter from "./model-proxy-router.ts"
+const { createRouter } = ModelProxyRouter
 
 import { existsSync } from "node:fs"
 const _cfg = join(import.meta.dirname, "model-proxy-router.json")

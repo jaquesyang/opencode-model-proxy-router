@@ -5,12 +5,14 @@
   "type": "module",
   "main": "./model-proxy-router.ts",
   "exports": {
-    ".": "./model-proxy-router.ts",
-    "./server": "./model-proxy-router.ts"
+    ".": {
+      "import": "./model-proxy-router.ts",
+      "types": "./model-proxy-router.ts"
+    }
   },
   "files": [
     "model-proxy-router.ts",
-    "router.ts"
+    "model-proxy-router.json.example"
   ],
   "scripts": {
     "test": "node --test test.mjs",
@@ -22,8 +24,30 @@
     "proxy",
     "http-proxy"
   ],
-  "author": "",
+  "author": "jaquesyang",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaquesyang/opencode-model-proxy-router.git"
+  },
+  "homepage": "https://github.com/jaquesyang/opencode-model-proxy-router#readme",
+  "bugs": {
+    "url": "https://github.com/jaquesyang/opencode-model-proxy-router/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": "*"
+  },
+  "peerDependenciesMeta": {
+    "@opencode-ai/plugin": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
     "@opencode-ai/plugin": "^1.0.0",
     "@types/node": "^26.2.0",
