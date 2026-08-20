@@ -1,4 +1,6 @@
-# model-proxy-router
+# opencode-model-proxy-router
+
+English | [简体中文](./README.zh-CN.md)
 
 An [Opencode](https://opencode.ai) plugin that routes model API requests to different proxies by wrapping `fetch`, with hot-reload support.
 
@@ -69,7 +71,7 @@ See `model-proxy-router.json.example`.
   - `"prefix/*"` — wildcard match for any model starting with `prefix/`
   - matching order: exact → wildcard → `default`
 
-Requests whose URL starts with a learned provider base URL (e.g. `https://opencode.ai/zen/...`) are routed by provider first (`provider/model` → `provider/*` → bare `model`).
+Requests whose URL starts with a learned provider base URL (e.g. `https://opencode.ai/zen/...`) are routed by provider first (`provider/*` → `provider/model` → bare `model`).
 
 ## Debug
 
