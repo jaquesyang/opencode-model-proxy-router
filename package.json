@@ -1,6 +1,6 @@
 {
   "name": "@jaquesyang/opencode-model-proxy-router",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Opencode plugin that routes model API requests to different HTTP proxies by wrapping fetch, with hot-reload.",
   "type": "module",
   "main": "./model-proxy-router.ts",
