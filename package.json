@@ -9,8 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
-  "dependencies": {
-    "undici": "^8.10.0"
-  }
+  "type": "module"
 }

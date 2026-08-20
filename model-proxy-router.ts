@@ -1,7 +1,6 @@
 import { readFileSync, watch } from "node:fs"
 import { homedir } from "node:os"
 import { join } from "node:path"
-import { ProxyAgent } from "undici"
 import type { Plugin } from "@opencode-ai/plugin"
 
 const DEFAULT_CONFIG_PATH = join(
@@ -27,10 +26,8 @@ export function createRouter(configPath: string) {
       .replace(/^socks5h:\/\//i, "socks5://")
       .replace(/^socksh:\/\//i, "socks://")
     try {
-      // Bun's fetch uses the `proxy` option (a URL string); undici
-      // ProxyAgent is kept for the non-Bun fallback path.
-      const agent = new ProxyAgent(normalized)
-      return { url: normalized, dispatcher: agent }
+      // Bun's fetch uses the `proxy` option (a URL string).
+      return { url: normalized }
     } catch (e) {
       console.warn("[model-proxy-router] bad proxy URL:", (e as Error).message)
       return null

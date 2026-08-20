@@ -3,7 +3,6 @@ import assert from "node:assert/strict"
 import { writeFileSync, mkdtempSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { ProxyAgent } from "undici"
 import { createRouter } from "./model-proxy-router.ts"
 
 import { existsSync } from "node:fs"
@@ -22,8 +21,6 @@ const { wrappedFetch, agents } = router
 const socks = agents.get("socks")
 const http = agents.get("http")
 
-assert.ok(socks?.dispatcher instanceof ProxyAgent, "socks agent is ProxyAgent")
-assert.ok(http?.dispatcher instanceof ProxyAgent, "http agent is ProxyAgent")
 assert.ok(typeof socks?.url === "string", "socks has url")
 assert.ok(typeof http?.url === "string", "http has url")
 
@@ -35,7 +32,7 @@ async function fetchBody(body) {
 
 async function expectProxy(name, model, agent) {
   const init = await fetchBody(JSON.stringify({ model }))
-  // Bun fetch uses `proxy` option (url string); wrapper stores url + dispatcher
+  // Bun fetch uses `proxy` option (url string).
   assert.equal(init?.proxy, agent.url, name)
 }
 
